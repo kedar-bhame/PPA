@@ -1,49 +1,32 @@
-class Stack:
-    def __init__(self):
-        self.size = 10
-        self.stack = [0] * self.size
-        self.top = -1
+class stacks:
+    def __init_(self):
+        self.stack = []
+        self.Top = -1
 
-    def push(self, value):
-        if self.top == self.size - 1:
-            print("Stack overflow")
-            return
+    def isempty(self):
+        if(self.Top == -1):
+            return True
+        else:
+            return False
+            
 
-        self.top = self.top + 1
-        self.stack[self.top] = value
+
+    def push(self, Value):
+        self.Top = self.Top + 1
+        self.stack[self.Top] = Value
 
     def pop(self):
-        if self.top == -1:
-            print("Stack underflow")
-            return None
-
-        value = self.stack[self.top]
-        self.top = self.top - 1
-        return value
+        self.Top = self.Top - 1
 
     def peek(self):
-        if self.top == -1:
-            print("Stack is empty")
-            return None
-        return self.stack[self.top]
+        return self.stack[self.Top]
 
-    def display(self):
-        if self.top == -1:
-            print("Stack is empty")
-            return
+    def see(self):
+        for i in self.stack
 
-        index = self.top
-        while index >= 0:
-            print(self.stack[index])
-            index = index - 1
+s = stacks 
+s.push(10)
+s.push(20)
+s.push(30)
 
-
-if __name__ == "__main__":
-    stack = Stack()
-    stack.push(10)
-    stack.push(20)
-    stack.push(30)
-    print("Stack elements:")
-    stack.display()
-    print("Popped:", stack.pop())
-    print("Top:", stack.peek())
+print(s.peek())
