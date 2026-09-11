@@ -1,4 +1,5 @@
 #include<stdio.h>
+// void pointer used here
 
 int main(){
 
