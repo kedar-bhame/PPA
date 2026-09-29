@@ -14,13 +14,19 @@ class Derived(Base):
    def fun(self):
       print("Derived fun.")
    def sun(self):
-      print("Derived sun.")
+    print("Derived sun.")
+   def mun(self):
+         print("Derived mun.")
+   def bun(self):
+         print("Derived bun.")   
 
 bp: Base = Derived()
 bp.fun() # Derived fun
 bp.gun() # Base gun
 bp.sun() # Derived sun
 bp.run() # Base run
+bp.mun() # Derived mun
+bp.bun() #Derived bun
 
     
     
