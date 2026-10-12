@@ -1,0 +1,175 @@
+PS C:\Users\Admin\Desktop\PPA\python> python AI_Second_Assignment.py
+==================================================
+             DFS AND BFS GRAPH
+==================================================
+
+Enter number of vertices: 16
+
+Enter all vertices in one line: S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16
+
+Enter number of edges: 16
+
+==================================================
+                    ENTER EDGES
+==================================================
+Enter each edge in the form:
+A B
+
+The graph is UNDIRECTED.
+Therefore A B means A <-> B.
+
+Edge 1 : S1 S2
+
+Edge 2 : S1 S3
+
+Edge 3 : S1 S4
+
+Edge 4 : S3 S5
+
+Edge 5 : S5 S6
+
+Edge 6 : S5 S7
+
+Edge 7 : S6 S8
+
+Edge 8 : S6 S9
+
+Edge 9 : S7 S10
+
+Edge 10 : S7 S11
+
+Edge 11 : S9 S12
+
+Edge 12 : S9 S13
+
+Edge 13 : S10 S13
+
+Edge 14 : S10 S14
+
+Edge 15 : S13 S15
+
+Edge 16 : S15 S16
+
+==================================================
+                 VALID STATES
+==================================================
+How many valid states are there: 10
+Enter all valid states in one line: S1 S3 S5 S6 S7 S9 S10 S13 S15 S16
+
+==================================================
+                INVALID STATES
+==================================================
+How many invalid states are there: 6
+Enter all invalid states in one line: S2 S4 S8 S11 S12 S14
+
+==================================================
+                 VALID STATES
+==================================================
+Number of valid states: 10
+S1 S3 S5 S6 S7 S9 S10 S13 S15 S16 
+
+==================================================
+                INVALID STATES
+==================================================
+Number of invalid states: 6
+S2 S4 S8 S11 S12 S14 
+
+==================================================
+                 ORIGINAL GRAPH
+==================================================
+S1 -> S2 S3 S4 
+S2 -> S1 
+S3 -> S1 S5 
+S4 -> S1 
+S5 -> S3 S6 S7 
+S6 -> S5 S8 S9 
+S7 -> S5 S10 S11 
+S8 -> S6 
+S9 -> S6 S12 S13 
+S10 -> S7 S13 S14 
+S11 -> S7 
+S12 -> S9 
+S13 -> S9 S10 S15 
+S14 -> S10 
+S15 -> S13 S16 
+S16 -> S15 
+
+==================================================
+             GRAPH WITH STATES
+==================================================
+S1 -> VALID -> S3 
+S2 -> INVALID (X)
+S3 -> VALID -> S1 S5 
+S4 -> INVALID (X)
+S5 -> VALID -> S3 S6 S7 
+S6 -> VALID -> S5 S9 
+S7 -> VALID -> S5 S10 
+S8 -> INVALID (X)
+S9 -> VALID -> S6 S13 
+S10 -> VALID -> S7 S13 
+S11 -> INVALID (X)
+S12 -> INVALID (X)
+S13 -> VALID -> S9 S10 S15 
+S14 -> INVALID (X)
+S15 -> VALID -> S13 S16 
+S16 -> VALID -> S15 
+
+==================================================
+                 START AND GOAL
+==================================================
+Enter start vertex: S1
+Enter goal vertex: S16
+
+
+==================================================
+                    DFS
+==================================================
+
+DFS uses STACK
+STACK = LIFO
+Last In -> First Out
+
+--------------------------------------------------
+              DFS TRAVERSAL ORDER
+--------------------------------------------------
+S1 S3 S5 S6 S9 S13 S10 S7 S15 S16 
+
+--------------------------------------------------
+             ALL DFS PATHS
+--------------------------------------------------
+
+
+==================================================
+                    BFS
+==================================================
+
+BFS uses QUEUE
+QUEUE = FIFO
+First In -> First Out
+
+--------------------------------------------------
+              BFS TRAVERSAL ORDER
+--------------------------------------------------
+S1 S3 S5 S6 S7 S9 S10 S13 S15 S16 
+
+--------------------------------------------------
+             ALL BFS PATHS
+--------------------------------------------------
+
+
+==================================================
+              DFS vs BFS COMPARISON
+==================================================
+
+DFS Traversal:
+S1 -> S3 -> S5 -> S6 -> S9 -> S13 -> S10 -> S7 -> S15 -> S16 -> END
+
+BFS Traversal:
+S1 -> S3 -> S5 -> S6 -> S7 -> S9 -> S10 -> S13 -> S15 -> S16 -> END
+
+Number of DFS paths: 2
+Number of BFS paths: 2
+
+==================================================
+                 PROGRAM COMPLETE
+==================================================
