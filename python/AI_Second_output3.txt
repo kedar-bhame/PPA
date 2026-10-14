@@ -1,0 +1,179 @@
+PS C:\Users\Admin\Desktop\PPA\python> python AI_Second_Assignment2.py
+==================================================
+             DFS AND BFS GRAPH
+==================================================
+
+Enter number of vertices: 16
+
+Enter all vertices in one line: WGCF_ WG_FC WC_FG CG_FW WCF_G W_FCG C_FWG WF_CG WGF_C CGF_W CF_WG WG_FC G_FWC CG_FW GF_WC _GFWC
+
+Enter number of edges: 16
+
+==================================================
+                    ENTER EDGES
+==================================================
+Enter each edge in the form:
+A B
+
+The graph is UNDIRECTED.
+Therefore A B means A <-> B.
+
+Edge 1 : WGCF_ WG_FC
+
+Edge 2 : WGCF_ WC_FG
+
+Edge 3 : WGCF_ CG_FW 
+
+Edge 4 : WC_FG WCF_G
+
+Edge 5 : WCF_G W_FCG
+
+Edge 6 : WCF_G C_FWG
+
+Edge 7 : W_FCG WF_CG
+
+Edge 8 : W_FCG WGF_C
+
+Edge 9 : C_FWG CGF_W
+
+Edge 10 : C_FWG CF_WG
+
+Edge 11 : WGF_C WG_FC
+
+Edge 12 : WGF_C G_FWC
+
+Edge 13 : CGF_W G_FWC
+
+Edge 14 : CGF_W CG_FW
+
+Edge 15 : G_FWC GF_WC
+
+Edge 16 : GF_WC _GFWC
+
+==================================================
+                 VALID STATES
+==================================================
+How many valid states are there: 10
+Enter all valid states in one line: WGCF_ WC_FG WCF_G W_FCG C_FWG WGF_C CGF_W G_FWC GF_WC _GFWC
+
+==================================================
+                INVALID STATES
+==================================================
+How many invalid states are there: 6
+Enter all invalid states in one line: WG_FC CG_FW WF_CG CF_WG WG_FC CG_FW
+
+==================================================
+                 VALID STATES
+==================================================
+Number of valid states: 10
+WGCF_ WC_FG WCF_G W_FCG C_FWG WGF_C CGF_W G_FWC GF_WC _GFWC 
+
+==================================================
+                INVALID STATES
+==================================================
+Number of invalid states: 6
+WG_FC CG_FW WF_CG CF_WG WG_FC CG_FW 
+
+==================================================
+                 ORIGINAL GRAPH
+==================================================
+WGCF_ -> WG_FC WC_FG CG_FW 
+WG_FC -> WGCF_ WGF_C 
+WC_FG -> WGCF_ WCF_G 
+CG_FW -> WGCF_ CGF_W 
+WCF_G -> WC_FG W_FCG C_FWG 
+W_FCG -> WCF_G WF_CG WGF_C 
+C_FWG -> WCF_G CGF_W CF_WG 
+WF_CG -> W_FCG 
+WGF_C -> W_FCG WG_FC G_FWC 
+CGF_W -> C_FWG G_FWC CG_FW 
+CF_WG -> C_FWG 
+WG_FC -> WGCF_ WGF_C 
+G_FWC -> WGF_C CGF_W GF_WC 
+CG_FW -> WGCF_ CGF_W 
+GF_WC -> G_FWC _GFWC 
+_GFWC -> GF_WC 
+
+==================================================
+             GRAPH WITH STATES
+==================================================
+WGCF_ -> VALID -> WC_FG 
+WG_FC -> INVALID (X)
+WC_FG -> VALID -> WGCF_ WCF_G 
+CG_FW -> INVALID (X)
+WCF_G -> VALID -> WC_FG W_FCG C_FWG 
+W_FCG -> VALID -> WCF_G WGF_C 
+C_FWG -> VALID -> WCF_G CGF_W 
+WF_CG -> INVALID (X)
+WGF_C -> VALID -> W_FCG G_FWC 
+CGF_W -> VALID -> C_FWG G_FWC 
+CF_WG -> INVALID (X)
+WG_FC -> INVALID (X)
+G_FWC -> VALID -> WGF_C CGF_W GF_WC 
+CG_FW -> INVALID (X)
+GF_WC -> VALID -> G_FWC _GFWC 
+_GFWC -> VALID -> GF_WC 
+
+==================================================
+                 START AND GOAL
+==================================================
+Enter start vertex: WGCF_
+Enter goal vertex: _GFWC
+
+
+==================================================
+                    DFS
+==================================================
+
+DFS uses STACK
+STACK = LIFO
+Last In -> First Out
+
+--------------------------------------------------
+              DFS TRAVERSAL ORDER
+--------------------------------------------------
+WGCF_ WC_FG WCF_G W_FCG WGF_C G_FWC CGF_W C_FWG GF_WC _GFWC 
+
+--------------------------------------------------
+             ALL DFS PATHS
+--------------------------------------------------
+WGCF_ -> WC_FG -> WCF_G -> W_FCG -> WGF_C -> G_FWC -> GF_WC -> _GFWC
+WGCF_ -> WC_FG -> WCF_G -> C_FWG -> CGF_W -> G_FWC -> GF_WC -> _GFWC
+
+
+==================================================
+                    BFS
+==================================================
+
+BFS uses QUEUE
+QUEUE = FIFO
+First In -> First Out
+
+--------------------------------------------------
+              BFS TRAVERSAL ORDER
+--------------------------------------------------
+WGCF_ WC_FG WCF_G W_FCG C_FWG WGF_C CGF_W G_FWC GF_WC _GFWC 
+
+--------------------------------------------------
+             ALL BFS PATHS
+--------------------------------------------------
+WGCF_ -> WC_FG -> WCF_G -> W_FCG -> WGF_C -> G_FWC -> GF_WC -> _GFWC
+WGCF_ -> WC_FG -> WCF_G -> C_FWG -> CGF_W -> G_FWC -> GF_WC -> _GFWC
+
+
+==================================================
+              DFS vs BFS COMPARISON
+==================================================
+
+DFS Traversal:
+WGCF_ -> WC_FG -> WCF_G -> W_FCG -> WGF_C -> G_FWC -> CGF_W -> C_FWG -> GF_WC -> _GFWC -> END
+
+BFS Traversal:
+WGCF_ -> WC_FG -> WCF_G -> W_FCG -> C_FWG -> WGF_C -> CGF_W -> G_FWC -> GF_WC -> _GFWC -> END
+
+Number of DFS paths: 2
+Number of BFS paths: 2
+
+==================================================
+                 PROGRAM COMPLETE
+==================================================
