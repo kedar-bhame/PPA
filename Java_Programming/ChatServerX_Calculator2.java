@@ -53,6 +53,19 @@ class ChatServerX {
             System.out.println(eobj);
         }
     } // End of main
+
+    ////////////////////////////////////////////////////////////////////////
+    //
+    // Function Name    :   calculator
+    // Description      :   perform basic add,sub,mul,div calculation
+    // Input            :   Interger, Interger, String
+    // Output           :   Interger   
+    // Author           :   Kedar Anant Bhame
+    // Date             :   22/10/2026
+    //
+    /////////////////////////////////////////////////////////////////////////
+
+
     static int calculator(int iValue1, int iValue2, String operation)
     {
         switch(operation)
