@@ -1,0 +1,38 @@
+PS C:\Users\Admin\Desktop\PPA\python> python AI_Second_Assignment_own1.py
+Enter number of vertices: 3
+Enter vertices and their string values in pairs.
+
+Example format: S0 value1 S1 value2 (commas are optional)
+
+Enter all vertices and values in one line : 
+S0 APPLE S1 BALL S2 CAT
+{'S0': 'APPLE', 'S1': 'BALL', 'S2': 'CAT'}
+vertices :  ['S0', 'S1', 'S2']
+Enter number of edges: 3
+Enter all edges in one line saperate by commas.
+
+Example format: S0 S1, S1 S2, S1 S3 
+
+The graph is UNDIRECTED (S0 S1 means S0 <-> S1).
+
+Enter all edges : S0 S1, S1 S2, S2 S0
+{'S0': ['S1', 'S2'], 'S1': ['S0', 'S2'], 'S2': ['S1', 'S0']}
+Enter how many valid states are there out of 3 states : 2
+Enter all valid state in one line : S0 S2
+how many invalid states are there out of 3 states : 1
+Enter all invalid states in one line : S1
+S0 -> APPLE
+S1 -> BALL
+S2 -> CAT
+Number of valid states :  2
+S0(APPLE) S2(CAT) 
+Number of invalid states :  1
+S1(BALL) 
+Original graph :
+S0(APPLE) -> S1 S2 
+S1(BALL) -> S0 S2 
+S2(CAT) -> S1 S0 
+Graph with states : 
+S0(APPLE) -> VALID (X) S2 
+S1(BALL) -> INVALID (X)
+S2(CAT) -> VALID (X) S0 
