@@ -36,3 +36,85 @@ Graph with states :
 S0(APPLE) -> VALID (X) S2 
 S1(BALL) -> INVALID (X)
 S2(CAT) -> VALID (X) S0 
+
+
+
+wolf goat puzzle -
+
+PS C:\Users\Admin\Desktop\PPA\python> python AI_Second_Assignment_own1.py
+Enter number of vertices: 16
+Enter vertices and their string values in pairs.
+
+Example format: S0 value1 S1 value2 (commas are optional)
+
+Enter all vertices and values in one line : 
+S1 WGCF_ , S2 WG_FC , S3 WC_FG , S4 CG_FW , S5 WCF_G , S6 W_FCG , S7 C_FWG , S8 WF_CG , S9 WGF_C , S10 CGF_W , S11 CF_WG , S12 WG_FC , S13 G_FWC , S14 CG_FW , S15 GF_WC , S16 _GFWC
+{'S1': 'WGCF_', 'S2': 'WG_FC', 'S3': 'WC_FG', 'S4': 'CG_FW', 'S5': 'WCF_G', 'S6': 'W_FCG', 'S7': 'C_FWG', 'S8': 'WF_CG', 'S9': 'WGF_C', 'S10': 'CGF_W', 'S11': 'CF_WG', 'S12': 'WG_FC', 'S13': 'G_FWC', 'S14': 'CG_FW', 'S15': 'GF_WC', 'S16': '_GFWC'}
+vertices :  ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12', 'S13', 'S14', 'S15', 'S16']
+Enter number of edges: 16
+Enter all edges in one line saperate by commas.
+
+Example format: S0 S1, S1 S2, S1 S3 
+
+The graph is UNDIRECTED (S0 S1 means S0 <-> S1).
+
+Enter all edges : S1 S2,S1 S3,S1 S4,S3 S5,S5 S6,S5 S7,S6 S8,S6 S9,S7 S10,S7 S11,S9 S12,S9 S13,S10 S13,S10 S14,S13 S15,S15 S16
+{'S1': ['S2', 'S3', 'S4'], 'S2': ['S1'], 'S3': ['S1', 'S5'], 'S4': ['S1'], 'S5': ['S3', 'S6', 'S7'], 'S6': ['S5', 'S8', 'S9'], 'S7': ['S5', 'S10', 'S11'], 'S8': ['S6'], 'S9': ['S6', 'S12', 'S13'], 'S10': ['S7', 'S13', 'S14'], 'S11': ['S7'], 'S12': ['S9'], 'S13': ['S9', 'S10', 'S15'], 'S14': ['S10'], 'S15': ['S13', 'S16'], 'S16': ['S15']}
+Enter how many valid states are there out of 16 states : 10
+Enter all valid state in one line : S1 S3 S5 S6 S7 S9 S10 S13 S15 S16
+how many invalid states are there out of 16 states : 6
+Enter all invalid states in one line : S2 S4 S8 S11 S12 S14
+S1 -> WGCF_
+S2 -> WG_FC
+S3 -> WC_FG
+S4 -> CG_FW
+S5 -> WCF_G
+S6 -> W_FCG
+S7 -> C_FWG
+S8 -> WF_CG
+S9 -> WGF_C
+S10 -> CGF_W
+S11 -> CF_WG
+S12 -> WG_FC
+S13 -> G_FWC
+S14 -> CG_FW
+S15 -> GF_WC
+S16 -> _GFWC
+Number of valid states :  10
+S1(WGCF_) S3(WC_FG) S5(WCF_G) S6(W_FCG) S7(C_FWG) S9(WGF_C) S10(CGF_W) S13(G_FWC) S15(GF_WC) S16(_GFWC) 
+Number of invalid states :  6
+S2(WG_FC) S4(CG_FW) S8(WF_CG) S11(CF_WG) S12(WG_FC) S14(CG_FW) 
+Original graph :
+S1(WGCF_) -> S2 S3 S4 
+S2(WG_FC) -> S1 
+S3(WC_FG) -> S1 S5 
+S4(CG_FW) -> S1 
+S5(WCF_G) -> S3 S6 S7 
+S6(W_FCG) -> S5 S8 S9 
+S7(C_FWG) -> S5 S10 S11 
+S8(WF_CG) -> S6 
+S9(WGF_C) -> S6 S12 S13 
+S10(CGF_W) -> S7 S13 S14 
+S11(CF_WG) -> S7 
+S12(WG_FC) -> S9 
+S13(G_FWC) -> S9 S10 S15 
+S14(CG_FW) -> S10 
+S15(GF_WC) -> S13 S16 
+S16(_GFWC) -> S15 
+Graph with states : 
+S1(WGCF_) -> VALID (X) S3 
+S2(WG_FC) -> INVALID (X)
+S3(WC_FG) -> VALID (X) S1 S5 
+S4(CG_FW) -> INVALID (X)
+S5(WCF_G) -> VALID (X) S3 S6 S7 
+S6(W_FCG) -> VALID (X) S5 S9 
+S7(C_FWG) -> VALID (X) S5 S10 
+S8(WF_CG) -> INVALID (X)
+S9(WGF_C) -> VALID (X) S6 S13 
+S10(CGF_W) -> VALID (X) S7 S13 
+S11(CF_WG) -> INVALID (X)
+S12(WG_FC) -> INVALID (X)
+S13(G_FWC) -> VALID (X) S9 S10 S15 
+S14(CG_FW) -> INVALID (X)
+S15(GF_WC) -> VALID (X) S13 S16 
+S16(_GFWC) -> VALID (X) S15 
